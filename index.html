@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat Assistant</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Mobile Menu Button -->
+    <button
+        id="mobileMenuBtn"
+        class="md:hidden fixed top-4 left-4 z-50 bg-violet-600 text-white px-4 py-2 rounded-lg"
+    >
+        ☰
+    </button>
+
+    <div class="flex h-screen overflow-hidden">
+
+        <!-- Sidebar -->
+        <aside
+            id="sidebar"
+            class="w-64 h-full bg-slate-900 p-5 flex-shrink-0 fixed md:static top-0 left-0 z-40"
+        >
+
+            <h2 class="text-2xl font-bold text-violet-400 mb-8">
+                AI Assistant
+            </h2>
+
+            <button
+                id="newChatBtn"
+                class="w-full bg-violet-600 hover:bg-violet-700 p-3 rounded-xl text-white transition"
+            >
+                + New Chat
+            </button>
+
+            <h3 class="text-gray-400 mt-8 mb-4 text-sm">
+                RECENT CHATS
+            </h3>
+
+            <input
+                type="text"
+                id="searchChat"
+                placeholder="Search chats..."
+                class="w-full mt-2 mb-3 p-3 rounded-lg bg-slate-800 text-white outline-none border border-slate-700 focus:border-violet-500"
+            >
+
+            <div id="chatHistory" class="mt-3 space-y-2"></div>
+
+            <button
+                id="clearChatsBtn"
+                class="w-full mt-4 bg-red-600 hover:bg-red-700 p-3 rounded-xl text-white transition"
+            >
+                Clear All Chats
+            </button>
+
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="flex-1 h-full min-w-0 flex flex-col overflow-hidden">
+
+            <!-- Welcome Section -->
+            <div
+                id="welcomeSection"
+                class="text-center max-w-2xl mx-auto mt-10"
+            >
+
+                <div class="text-5xl mb-6">
+                    ✨
+                </div>
+
+                <h1 class="text-4xl font-bold text-white mb-4">
+                    How can I help you today?
+                </h1>
+
+                <p class="text-gray-400 text-lg mb-10">
+                    Ask anything, explore ideas, and get intelligent answers
+                    with your AI assistant.
+                </p>
+
+            </div>
+
+            <!-- Suggestion Cards -->
+            <div
+                id="suggestionCards"
+                class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl w-full mx-auto px-4"
+            >
+
+                <div
+                    id="creativeCard"
+                    class="bg-slate-900 border border-slate-700 p-5 rounded-2xl hover:border-violet-500 transition cursor-pointer"
+                >
+                    <h3 class="text-white font-semibold mb-2">
+                        💡 Creative Ideas
+                    </h3>
+
+                    <p class="text-gray-400 text-sm">
+                        Generate creative ideas for your next project.
+                    </p>
+                </div>
+
+                <div
+                    id="codingCard"
+                    class="bg-slate-900 border border-slate-700 p-5 rounded-2xl hover:border-violet-500 transition cursor-pointer"
+                >
+                    <h3 class="text-white font-semibold mb-2">
+                        💻 Coding Help
+                    </h3>
+
+                    <p class="text-gray-400 text-sm">
+                        Learn programming with simple explanations.
+                    </p>
+                </div>
+
+                <div
+                    id="writingCard"
+                    class="bg-slate-900 border border-slate-700 p-5 rounded-2xl hover:border-violet-500 transition cursor-pointer"
+                >
+                    <h3 class="text-white font-semibold mb-2">
+                        ✍️ Writing Assistant
+                    </h3>
+
+                    <p class="text-gray-400 text-sm">
+                        Create professional content and documents.
+                    </p>
+                </div>
+
+                <div
+                    id="learnCard"
+                    class="bg-slate-900 border border-slate-700 p-5 rounded-2xl hover:border-violet-500 transition cursor-pointer"
+                >
+                    <h3 class="text-white font-semibold mb-2">
+                        📚 Learn Something
+                    </h3>
+
+                    <p class="text-gray-400 text-sm">
+                        Explore new topics and improve your skills.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Chat Messages -->
+            <div
+                id="chatMessages"
+                class="w-full max-w-2xl mx-auto mt-6 flex-1 overflow-y-auto"
+            >
+            </div>
+
+            <!-- Chat Input Section -->
+            <div
+                class="w-full max-w-2xl mx-auto px-3 sm:px-8 pb-4 sm:pb-6 pt-4 flex-shrink-0"
+            >
+
+                <div class="flex items-center bg-slate-900 border border-slate-700 rounded-2xl p-3 focus-within:border-violet-500 transition">
+
+                    <input
+                        type="text"
+                        id="userInput"
+                        placeholder="Message your AI assistant..."
+                        class="flex-1 min-w-0 bg-transparent text-white outline-none px-3 placeholder-gray-500"
+                    >
+
+                    <button
+                        id="sendBtn"
+                        class="bg-violet-600 hover:bg-violet-700 text-white px-4 sm:px-5 py-3 rounded-xl transition"
+                    >
+                        ➤
+                    </button>
+
+                </div>
+
+                <p class="text-center text-gray-500 text-xs mt-3">
+                    AI can make mistakes. Check important information.
+                </p>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
